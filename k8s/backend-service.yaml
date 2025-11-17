@@ -3,11 +3,10 @@ kind: Service
 metadata:
  name: backend
 spec:
- type: NodePort # <-- Change here!
+ type: ClusterIP # Internal service (accessed by frontend via cluster DNS)
  selector:
   app: backend
  ports:
   - protocol: TCP
     port: 8000
     targetPort: 8000
-    nodePort: 30081 # <-- You can pick a port (between 30000-32767), or omit this line to let k8s pick one

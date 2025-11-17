@@ -14,8 +14,8 @@ spec:
   spec:
    containers:
     - name: frontend
-      image: movie-frontend:latest
-      imagePullPolicy: Never # for local images on Minikube
+      image: amarynow/movie-tracker-frontend:latest
+      imagePullPolicy: Always
       env:
        - name: API_URL
          value: "http://backend:8000" # Or whatever your backend service URL is **inside the cluster**
@@ -27,10 +27,9 @@ kind: Service
 metadata:
  name: frontend
 spec:
- type: NodePort # (Or LoadBalancer for cloud)
+ type: LoadBalancer # For cloud deployment (provides external IP)
  selector:
   app: frontend
  ports:
   - port: 80
     targetPort: 80
-    nodePort: 30080 # Choose a free port above 30000 for Minikube

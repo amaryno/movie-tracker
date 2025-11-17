@@ -14,8 +14,8 @@ spec:
   spec:
    containers:
     - name: backend
-      image: movie-backend:latest
-      imagePullPolicy: Never
+      image: amarynow/movie-tracker-backend:latest
+      imagePullPolicy: Always
       ports:
        - containerPort: 8000
       env:
