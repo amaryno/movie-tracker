@@ -14,5 +14,3 @@ A simple full-stack demo app (Angular + FastAPI + PostgreSQL) for learning Docke
 ---
 
 ## 🗂️ Project Structure
-
-
